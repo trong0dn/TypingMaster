@@ -33,7 +33,7 @@ pip install webdriver-manager
 
 The web crawler uses the Python library called `Selenium` which requires a browser `webdriver`. In this project, we selected Google Chrome as a browser, thus we needed `ChromeDriver`. Download the latest verison here: https://chromedriver.chromium.org/.
 
-### Environment: Anaconda (Optional)
+### Environment: Anaconda [Optional]
 
 Legacy code used `Anaconda` distribution of Python with environment configuration: [environment.yml](./environment.yml). However, this is not strictly required.
 
@@ -55,9 +55,9 @@ Written in `Jupyter Notebook` to allow for better sequencial code execution.
 
 ## Monkey Type
 
-* [Jupyter Source Code](./monkey-type.ipynb)
+* [Jupyter Notebook Source Code](./monkey-type.ipynb)
 
-* Used for https://monkey-type.com/
+* Executed for https://monkey-type.com/
 
 ## Usage
 
