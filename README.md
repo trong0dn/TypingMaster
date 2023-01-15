@@ -1,31 +1,48 @@
-# Typing Master
+# TypingMaster
 
-I am a slow typer, my max wpm (word per minute) is 109.
+I am a slow typer, my max WPM (word per minute) is less than 100.
+So, I was going to write a web crawler to type quicker and "hack" speed-typing games for fun.
+After doing some research, I stumbled upon a [GitHub repository](https://github.com/HuakunShen/TypingMaster) that already had the script I intended to write.
+Rather than reinviting the wheel, I decided to fork my first project and improve upon it.
 
-So let me break the record with machines.
+## Working Technology Stack
+<p align="left"> 
+    <a href="https://www.python.org/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="python" width="40" height="40"/> </a> 
+    <a href="https://www.selenium.dev/" target="_blank"> <img src="https://www.selenium.dev/images/logos/webdriver.svg" alt="selenium" width="40" height="40"/> </a>
+    <a href="https://chromedriver.chromium.org/downloads" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" alt="chrome" width="40" height="40"/> </a>
+    <a href="https://jupyter.org/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" alt="jupyter" width="40" height="40"/> </a>
+</p>
 
-I wrote web crawlers to type and break the record.
+## Dependencies
+* [Selenium](https://pypi.org/project/selenium/) v4.7.2 - Automating web applications
+* [Webdriver-manager](https://pypi.org/project/webdriver-manager/) v3.8.5 - Library to automatically manage drivers for different browsers 
+
+## Quick Demos
+<img src="README.assets/monkey-type.gif" alt="monkey-type" />
 
 ![thumbnail-icon](README.assets/thumbnail-icon.png)
 
-<img src="README.assets/monkey-type.gif" alt="monkey-type" />
+## Getting Started
+```terminal
+# Install dependencies
+pip install selenium
+pip install webdriver-manager
+```
 
-### YouTube: https://youtu.be/3QJkQ7hzdRE
+### WebDriver: ChromeDriver
 
-# Instructions
+The web crawler uses the Python library called `Selenium` which requires a browser `webdriver`. In this project, we selected Google Chrome as a browser, thus we needed `ChromeDriver`. Download the latest verison here: https://chromedriver.chromium.org/.
 
-### Chrome Driver
+### Environment: Anaconda (Optional)
 
-The web crawler depends uses selenium python library which requires a browser driver, I used chrome driver.
-You can download the latest verison here: https://chromedriver.chromium.org/.
+Legacy code used `Anaconda` distribution of Python with environment configuration: [environment.yml](./environment.yml). However, this is not strictly required.
 
-### Environment
+```terminal
+# Create a conda environment
+`conda env create -f environment.yml`
+```
 
-I use Anaconda, this is my environment configuration: [environment.yml](./environment.yml)
-
-Run `conda env create -f environment.yml` to create a conda environment.
-
-However, the main library used is `selenium`, you could also simply install `selenium`.
+The main library used is `Selenium`, you could also simply install `selenium` using *conda* or *pip*.
 
 ```bash
 conda install -c conda-forge selenium		# install with conda
@@ -34,27 +51,23 @@ pip install selenium						# install with pip
 
 ### Jupyter Notebook
 
-Code are written in Jupyter Notebook, you can convert the notebook into pure python code, but remember to comment out the last line `browser.close()` if you want to see the result, or if you are running the notebook, don't run this line, otherwise browser closes and you will lose the result.
+Written in `Jupyter Notebook` to allow for better sequencial code execution.
 
 ## Monkey Type
 
-[code](./monkey-type.ipynb)
+* [Jupyter Source Code](./monkey-type.ipynb)
 
-https://monkey-type.com/
+* Used for https://monkey-type.com/
 
-### Usage
+## Usage
 
-There are 4 functions/methods, you can change the value of delay and method.
+There are 4 functions/methods, you can change the value of delay and method. Each method is of different styles with different techniques. The `delay` is for making the program more natural and more like a human typer. Typing too fast could be judged as invalid.
 
-Each method is of different styles with different techniques.
+- **The fastest method: 3**
 
-`delay` is for making the program more natural and more like a human typer. Typing too fast could be judged as invalid.
+- **The most natural method: 4**
 
-**The fastest method: 3**
-
-**The most natural method: 4**
-
-#### Method 1: one_letter_at_a_time
+### Method 1: one_letter_at_a_time
 
 Find all words from the DOM, for each word and for each letter, send the letters one by one to the browser.
 
@@ -62,24 +75,38 @@ But since all words are extracted at once and then entered, when words used up a
 
 ![letter-by-letter](README.assets/letter-by-letter.gif)
 
-#### Method 2: all_letters_at_a_time
+### Method 2: all_letters_at_a_time
 
-Similar to method 1.
+Similar to Method 1.
 
 Find all words from the DOM, construct a long string, and enter the entire string at once. After each run, some new words would be loaded and some calculation needs to be performed, so there is some lag between each iteration.
 
 ![all-letters](README.assets/all-letters.gif)
 
-#### Method 3: one_word_at_a_time
+### Method 3: one_word_at_a_time
 
 This is the fastest method. Select the active word in every iteration and enter the entire word in each iteration.
 
 <img src="README.assets/monkey-type.gif" alt="monkey-type" />
 
-#### Method 4: one_word_letter_at_a_time
+### Method 4: one_word_letter_at_a_time
 
 Select the active word in every iteration and pop out each letter of the word, this is the most natural (human like) way.
 
 A `delay` of 0.02 was given to make the behavior more human-like, so that this run wasn't judged to be invalid.
 
 ![natural](README.assets/natural.gif)
+
+## Acknowledgement
+
+Source code forked from: https://github.com/HuakunShen/TypingMaster <br>
+Youtube demo: https://youtu.be/3QJkQ7hzdRE <br>
+
+## Disclaimer
+
+Copyright disclaimer under section 107 of the Copyright Act 1976, 
+allowance is made for “fair use” for purposes such as criticism, 
+comment, news reporting, teaching, scholarship, education and research.
+
+Fair use is a use permitted by copyright statute that might otherwise 
+be infringing.
