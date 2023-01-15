@@ -1,6 +1,6 @@
 # TypingMaster
 
-I am a slow typer, my max WPM (word per minute) is less than 100.
+I am a slow typer, my max WPM (word per minute) is around 40 WPM.
 So, I was going to write a web crawler to type quicker and "hack" speed-typing games for fun.
 After doing some research, I stumbled upon a [GitHub repository](https://github.com/HuakunShen/TypingMaster) that already had the script I intended to write.
 Rather than reinviting the wheel, I decided to fork my first project and improve upon it.
@@ -96,6 +96,9 @@ Select the active word in every iteration and pop out each letter of the word, t
 A `delay` of 0.02 was given to make the behavior more human-like, so that this run wasn't judged to be invalid.
 
 ![natural](README.assets/natural.gif)
+
+## Useful Links
+Web console Javascript script for `typeracer.com`: https://gist.github.com/harishanchu/6852427
 
 ## Acknowledgement
 
