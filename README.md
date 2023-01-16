@@ -42,7 +42,7 @@ Legacy code used `Anaconda` distribution of Python with environment configuratio
 `conda env create -f environment.yml`
 ```
 
-The main library used is `Selenium`, you could also simply install `selenium` using *conda* or *pip*.
+The main library used is `Selenium`, you could also simply install Selenium using *conda* or *pip*.
 
 ```bash
 conda install -c conda-forge selenium		# install with conda
@@ -51,7 +51,7 @@ pip install selenium						# install with pip
 
 ### Jupyter Notebook
 
-Written in `Jupyter Notebook` to allow for better sequencial code execution.
+Written in `Jupyter Notebook` to allow for better sequential code execution.
 
 ## Monkey Type
 
@@ -61,7 +61,7 @@ Written in `Jupyter Notebook` to allow for better sequencial code execution.
 
 ## Usage
 
-There are 4 functions/methods, you can change the value of delay and method. Each method is of different styles with different techniques. The `delay` is for making the program more natural and more like a human typer. Typing too fast could be judged as invalid.
+There are 4 functions/methods, you can change the value of delay and method. Each method has different styles with different techniques. The *delay* is for making the program more natural and more like a human typer. Typing too fast could be judged as invalid.
 
 - **The fastest method: 3**
 
